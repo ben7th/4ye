@@ -1,0 +1,7 @@
+%ckplayer
+  %flashvars
+  - @data[@current_format].each do |f|
+    %video
+      %file= f[:file]
+      %size= f[:size]
+      %seconds= f[:seconds]

@@ -1,0 +1,72 @@
+$link-color:#2c5d8d;
+$link-hover-color:#2c5d8d;
+$border-radius-default:3px;
+$grid-gap:20px;
+
+@import "lily/css/lily.scss";
+
+@import "devtest";
+
+// ------------------------
+
+body {
+  background-color: #f2f2f2;
+  background-image: asset-data-url("layout/body-bg.gif");
+  // color: #f7f7f7;
+
+  // h1, h2, h3, h4, h5, h6 {
+  //   color: #f7f7f7;
+  // }
+
+  .page-header {
+    $h: 50px;
+    background: $black-80;
+    height: $h;
+    line-height: $h;
+    color: white;
+    margin-bottom: 30px;
+    .site {
+      font-weight: bold;
+      font-size: 16px;
+      text-shadow: 1px 1px 2px black;
+    }
+  }
+  .page-content {
+    margin-bottom: 50px;
+  }
+}
+
+.page-siye-index-index {
+  .tutorials {
+    .no-data {
+      font-size: 16px;
+      padding: 0 20px;
+      background-color: rgba(white, 0.7);
+      height:60px;line-height: 60px;
+    }
+  }
+}
+
+.code-highlight {
+  padding:10px 15px;
+  border:solid 1px $border-color-default;
+  background-color:#f8f8f9;
+  margin-bottom:20px;
+
+  margin-left: 0;
+  margin-right: 0;
+  border-width: 1px;
+
+  @include -below(phone) {
+    margin-left: -15px;
+    margin-right: -15px;
+    border-width: 1px 0;
+  }
+
+  pre {
+    background-color: transparent;
+    color: $text-color-default;
+    padding:0;margin:0;
+    border:0 none;
+  }
+}

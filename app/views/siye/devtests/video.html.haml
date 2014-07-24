@@ -1,0 +1,27 @@
+.col-pad-12
+  .row
+    .col-pad-6
+      %form{:action => url_for([:video, :devtest])}
+        .f
+          %label 这里是视频播放测试页，在这里输入 youku 视频地址：
+          %label 例如：http://v.youku.com/v_show/id_XNTY0ODE0MzU2.html
+        .f
+          %input.form-control{:type => :text, :name => :url, :placeholder => 'http://', :value => params[:url]}
+          %button.btn.btn-rounded.btn-flat-night.btn-large 确定
+
+  - if params[:url].present?
+    :ruby
+      xmlurl = url_for([:video, :devtest, :format => :xml, :url => params[:url], :vformat => @current_format])
+
+    .row
+      .col-pad-12
+        %h3.title= @title
+        .format-toggle
+          - @formats.each do |format|
+            :ruby
+              klass = (format == @current_format) ? 'btn-flat-caution' : 'btn-flat-primary'
+              url = url_for([:video, :devtest, :url => params[:url], :vformat => format])
+
+            %a.btn.btn-rounded.format{:class => klass ,:href => url}= format 
+      .col-pad-12
+        .page-video-player#player{:data => {:xmlurl => xmlurl}}

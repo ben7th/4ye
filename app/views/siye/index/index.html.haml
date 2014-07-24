@@ -1,0 +1,19 @@
+.col-pad-12
+  .tutorials
+    .files
+      - @files.each do |f|
+        .file
+          .url= f.url
+          .seconds= f.seconds
+          .size= f.size
+
+
+    - @tutorials = 1
+    - if @tutorials.blank?
+      .no-data 没有发布任何教程
+    - else
+      .row
+        .div.col-pad-6
+          %a.btn.btn-rounded.btn-flat-info.btn-large{:href => url_for([:video, :devtest])}
+            %i.fa.fa-arrow-right
+            %span 视频测试页

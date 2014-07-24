@@ -1,0 +1,21 @@
+!!!
+%html{:lang => :zh}
+  %head
+    %meta{:'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'}
+
+    - title = yield :page_title
+    - title = '四叶草播客' if title.blank?
+
+    %title= title
+    = stylesheet_link_tag 'siye/application', :media => 'screen'
+    = csrf_meta_tags
+    = javascript_include_tag 'siye/application'
+
+  %body
+    .page-header
+      .container
+        .site 4ye.me screencasts
+    .page-content.container
+      .row{:class => action_css_class}
+        = yield

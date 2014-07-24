@@ -1,0 +1,22 @@
+.col-pad-12
+  %h3 aliyun URL 签名测试
+  .id
+    %label ACCESS_ID
+    %span= @aliyun_access_id
+  .key
+    %label ACCESS_KEY
+    %span= @aliyun_access_key
+  .expires
+    %label EXPIRES
+    %span= @expires
+
+  .code-highlight
+    :coderay
+      #!text
+      #{@string_to_sign}
+
+  .sign
+    %label SIGN
+    %span= @sign
+  .url
+    %a{:href => @sign_url, :target => '_blank'}= @sign_url

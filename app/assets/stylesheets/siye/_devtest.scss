@@ -1,0 +1,27 @@
+.page-siye-devtests-video {
+  h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  form {
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input {
+      height:38px;
+      padding:5px 10px;
+      margin-bottom: 20px;
+      float: left;
+      @include col(4/5);
+      margin-right: 10px;
+    }
+    button {
+      float: left;
+    }
+  }
+  .format-toggle {
+    margin-bottom: 10px;
+  }
+}
